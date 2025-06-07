@@ -560,38 +560,38 @@ html {
 
 /* --- Viewport Width (vw) Utilities --- */
 /* vw: viewport width */
-.w-10vw { width: 10vw; }
-.w-20vw { width: 20vw; }
-.w-25vw { width: 25vw; }
-.w-30vw { width: 30vw; }
-.w-33vw { width: 33.33333vw; }
-.w-40vw { width: 40vw; }
-.w-50vw { width: 50vw; }
-.w-60vw { width: 60vw; }
-.w-66vw { width: 66.66667vw; }
-.w-70vw { width: 70vw; }
-.w-75vw { width: 75vw; }
-.w-80vw { width: 80vw; }
-.w-90vw { width: 90vw; }
-.w-100vw { width: 100vw; }
+.w-10vw { width: 10vw; width: 10dvw; }
+.w-20vw { width: 20vw; width: 20dvw; }
+.w-25vw { width: 25vw; width: 25dvw; }
+.w-30vw { width: 30vw; width: 30dvw; }
+.w-33vw { width: 33.33333vw; width: 33.33333dvw; }
+.w-40vw { width: 40vw; width: 40dvw; }
+.w-50vw { width: 50vw; width: 50dvw; }
+.w-60vw { width: 60vw; width: 60dvw; }
+.w-66vw { width: 66.66667vw; width: 66.66667dvw; }
+.w-70vw { width: 70vw; width: 70dvw; }
+.w-75vw { width: 75vw; width: 75dvw; }
+.w-80vw { width: 80vw; width: 80dvw; }
+.w-90vw { width: 90vw; width: 90dvw; }
+.w-100vw { width: 100vw; width: 100dvw; }
 
 
 /* --- Viewport Height (vh) Utilities --- */
 /* vh: viewport height */
-.h-10vh { height: 10vh; }
-.h-20vh { height: 20vh; }
-.h-25vh { height: 25vh; }
-.h-30vh { height: 30vh; }
-.h-33vh { height: 33.33333vh; }
-.h-40vh { height: 40vh; }
-.h-50vh { height: 50vh; }
-.h-60vh { height: 60vh; }
-.h-66vh { height: 66.66667vh; }
-.h-70vh { height: 70vh; }
-.h-75vh { height: 75vh; }
-.h-80vh { height: 80vh; }
-.h-90vh { height: 90vh; }
-.h-100vh { height: 100vh; }
+.h-10vh { height: 10vh; height: 10dvh; }
+.h-20vh { height: 20vh; height: 20dvh; }
+.h-25vh { height: 25vh; height: 25dvh; }
+.h-30vh { height: 30vh; height: 30dvh; }
+.h-33vh { height: 33.33333vh; height: 33.33333dvh; }
+.h-40vh { height: 40vh; height: 40dvh; }
+.h-50vh { height: 50vh; height: 50dvh; }
+.h-60vh { height: 60vh; height: 60dvh; }
+.h-66vh { height: 66.66667vh; height: 66.66667dvh; }
+.h-70vh { height: 70vh; height: 70dvh; }
+.h-75vh { height: 75vh; height: 75dvh; }
+.h-80vh { height: 80vh; height: 80dvh; }
+.h-90vh { height: 90vh; height: 90dvh; }
+.h-100vh { height: 100vh; height: 100dvh; }
 
 
 /* Overflow Utilities */
