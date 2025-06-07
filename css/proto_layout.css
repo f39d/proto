@@ -1,0 +1,589 @@
+/*
+ * Concise Layout Utility Library for Data-Dense Web Applications
+ *
+ * This library provides highly condensed utility classes for Flexbox and CSS Grid
+ * to facilitate rapid layout development for data-dense UIs.
+ * It prioritizes brevity and modularity, using common abbreviations for properties.
+ *
+ * All applicable units are now in 'rem' for better responsiveness and accessibility.
+ * It focuses purely on layout, leaving styling of individual components
+ * (buttons, inputs, etc.) to other libraries.
+ */
+
+/* ==========================================================================
+   1. Root Font Size & Global Layout Configuration
+   ========================================================================== */
+
+/*
+ * Set a base font-size on the root html element.
+ * This ensures that all 'rem' units scale relative to this base.
+ * Using 16px to align with browser defaults
+ * and allows familiar font size scaling for accessibility.
+ * To use 1rem = 10px for easier mental math, set `font-size: 62.5%;`.
+ */
+html {
+  font-size: 16px; /* Defines 1rem = 16px */
+}
+
+:root {
+  /* --- Spacing System (all in rem) --- */
+  --s-xxs: 0.25rem; /* 4px */
+  --s-xs: 0.5rem;   /* 8px */
+  --s-sm: 0.75rem;  /* 12px */
+  --s-md: 1rem;     /* 16px */
+  --s-lg: 1.5rem;   /* 24px */
+  --s-xl: 2rem;     /* 32px */
+  --s-xxl: 3rem;    /* 48px */
+
+  /* --- Grid Defaults --- */
+  --g-cols-default: 12; /* Default number of columns for grid systems (unitless) */
+}
+
+/* ==========================================================================
+   2. Display & Core Layout Containers
+   ========================================================================== */
+
+/* Display Flex */
+.df {
+  display: flex;
+}
+
+/* Display Inline Flex */
+.dif {
+  display: inline-flex;
+}
+
+/* Display Grid */
+.dg {
+  display: grid;
+}
+
+/* Display Inline Grid */
+.dig {
+  display: inline-grid;
+}
+
+/* Display Block */
+.db {
+  display: block;
+}
+
+/* Display Inline Block */
+.dib {
+  display: inline-block;
+}
+
+/* Display None (Hide element) */
+.dn {
+  display: none;
+}
+
+/* ==========================================================================
+   3. Common Alignment & Distribution (Works for Flex and Grid)
+   ========================================================================== */
+
+/* Justify Content (Main Axis / Inline Axis) */
+.jc-fs { /* Justify Content: Flex Start / Start */
+  justify-content: flex-start;
+}
+.jc-fe { /* Justify Content: Flex End / End */
+  justify-content: flex-end;
+}
+.jc-c { /* Justify Content: Center */
+  justify-content: center;
+}
+.jc-sb { /* Justify Content: Space Between */
+  justify-content: space-between;
+}
+.jc-sa { /* Justify Content: Space Around */
+  justify-content: space-around;
+}
+.jc-se { /* Justify Content: Space Evenly */
+  justify-content: space-evenly;
+}
+.jc-s { /* Justify Content: Start (for grid) */
+  justify-content: start;
+}
+.jc-e { /* Justify Content: End (for grid) */
+  justify-content: end;
+}
+
+/* Align Items (Cross Axis / Block Axis) */
+.ai-fs { /* Align Items: Flex Start / Start */
+  align-items: flex-start;
+}
+.ai-fe { /* Align Items: Flex End / End */
+  align-items: flex-end;
+}
+.ai-c { /* Align Items: Center */
+  align-items: center;
+}
+.ai-bl { /* Align Items: Baseline */
+  align-items: baseline;
+}
+.ai-st { /* Align Items: Stretch */
+  align-items: stretch;
+}
+.ai-s { /* Align Items: Start (for grid) */
+  align-items: start;
+}
+.ai-e { /* Align Items: End (for grid) */
+  align-items: end;
+}
+
+/* Align Content (Multi-line Cross Axis / Block Axis) */
+.ac-fs { /* Align Content: Flex Start / Start */
+  align-content: flex-start;
+}
+.ac-fe { /* Align Content: Flex End / End */
+  align-content: flex-end;
+}
+.ac-c { /* Align Content: Center */
+  align-content: center;
+}
+.ac-sb { /* Align Content: Space Between */
+  align-content: space-between;
+}
+.ac-sa { /* Align Content: Space Around */
+  align-content: space-around;
+}
+.ac-st { /* Align Content: Stretch */
+  align-content: stretch;
+}
+.ac-se { /* Align Content: Space Evenly */
+  align-content: space-evenly;
+}
+.ac-s { /* Align Content: Start (for grid) */
+  align-content: start;
+}
+.ac-e { /* Align Content: End (for grid) */
+  align-content: end;
+}
+
+/* Justify Self (Individual Item Horizontal Alignment) */
+.js-s { /* Justify Self: Start */
+  justify-self: start;
+}
+.js-e { /* Justify Self: End */
+  justify-self: end;
+}
+.js-c { /* Justify Self: Center */
+  justify-self: center;
+}
+.js-st { /* Justify Self: Stretch */
+  justify-self: stretch;
+}
+
+/* Align Self (Individual Item Vertical Alignment) */
+.as-s { /* Align Self: Start */
+  align-self: start;
+}
+.as-e { /* Align Self: End */
+  align-self: end;
+}
+.as-c { /* Align Self: Center */
+  align-self: center;
+}
+.as-st { /* Align Self: Stretch */
+  align-self: stretch;
+}
+.as-bl { /* Align Self: Baseline (for flex) */
+  align-self: baseline;
+}
+
+
+/* Gap Properties (using rem) */
+.gap-xxs { gap: var(--s-xxs); }
+.gap-xs { gap: var(--s-xs); }
+.gap-sm { gap: var(--s-sm); }
+.gap-md { gap: var(--s-md); }
+.gap-lg { gap: var(--s-lg); }
+.gap-xl { gap: var(--s-xl); }
+.gap-xxl { gap: var(--s-xxl); }
+
+.rg-xxs { row-gap: var(--s-xxs); } /* Row Gap */
+.rg-xs { row-gap: var(--s-xs); }
+.rg-sm { row-gap: var(--s-sm); }
+.rg-md { row-gap: var(--s-md); }
+.rg-lg { row-gap: var(--s-lg); }
+.rg-xl { row-gap: var(--s-xl); }
+.rg-xxl { row-gap: var(--s-xxl); }
+
+.cg-xxs { column-gap: var(--s-xxs); } /* Column Gap */
+.cg-xs { column-gap: var(--s-xs); }
+.cg-sm { column-gap: var(--s-sm); }
+.cg-md { column-gap: var(--s-md); }
+.cg-lg { column-gap: var(--s-lg); }
+.cg-xl { column-gap: var(--s-xl); }
+.cg-xxl { column-gap: var(--s-xxl); }
+
+
+/* ==========================================================================
+   4. Flexbox Specific Utilities
+   ========================================================================== */
+
+/* Flex Direction */
+.df-col {
+  flex-direction: column;
+}
+.df-rr { /* Row Reverse */
+  flex-direction: row-reverse;
+}
+.df-cr { /* Column Reverse */
+  flex-direction: column-reverse;
+}
+
+/* Flex Wrap */
+.fw-w { /* Wrap */
+  flex-wrap: wrap;
+}
+.fw-nw { /* No Wrap */
+  flex-wrap: nowrap;
+}
+.fw-wr { /* Wrap Reverse */
+  flex-wrap: wrap-reverse;
+}
+
+/* Flex Item Properties (applies to children of .df/.dif) */
+.fg-1 { /* Flex Grow 1 */
+  flex-grow: 1;
+}
+.fg-0 { /* Flex Grow 0 */
+  flex-grow: 0;
+}
+.fs-1 { /* Flex Shrink 1 */
+  flex-shrink: 1;
+}
+.fs-0 { /* Flex Shrink 0 */
+  flex-shrink: 0;
+}
+
+.fb-a { /* Flex Basis Auto */
+  flex-basis: auto;
+}
+.f-fs { /* Flex Fill Space: flex: 1 0 0% (grow, no shrink, 0 basis) */
+  flex: 1 0 0%;
+}
+.f-f { /* Flex Full: flex: 1 1 0% */
+  flex: 1 1 0%;
+}
+
+/* Order */
+.o-1 { order: 1; }
+.o-2 { order: 2; }
+.o-3 { order: 3; }
+.o-4 { order: 4; }
+.o-5 { order: 5; }
+.o-f { order: -9999; } /* First */
+.o-l { order: 9999; }  /* Last */
+
+/* ==========================================================================
+   5. CSS Grid Specific Utilities
+   ========================================================================== */
+
+/* Grid Template Columns (Implicit Columns, using fr for flexibility) */
+.gcs-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.gcs-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gcs-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gcs-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.gcs-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.gcs-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.gcs-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.gcs-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.gcs-9 { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+.gcs-10 { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+.gcs-11 { grid-template-columns: repeat(11, minmax(0, 1fr)); }
+.gcs-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+
+/* Auto-fit / Auto-fill with minmax (using rem for min-width values) */
+.gcs-af { /* Auto Fit, fluid columns */
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+.gcs-af-12r { /* Auto Fit, min 12rem (192px) */
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+.gcs-af-15r { /* Auto Fit, min 15rem (240px) */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.gcs-af-20r { /* Auto Fit, min 20rem (320px) */
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+.gcs-afi { /* Auto Fill, fluid columns */
+  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+}
+
+/* Grid Template Rows (Implicit Rows, using fr for flexibility) */
+.grs-1 { grid-template-rows: repeat(1, minmax(0, 1fr)); }
+.grs-2 { grid-template-rows: repeat(2, minmax(0, 1fr)); }
+.grs-3 { grid-template-rows: repeat(3, minmax(0, 1fr)); }
+.grs-a { grid-template-rows: auto; } /* Auto Rows */
+
+/* Grid Item Placement (Children of .dg/.dig containers) */
+
+/* Column Span (unitless, spans refer to grid tracks) */
+.gc-s1 { grid-column: span 1 / span 1; }
+.gc-s2 { grid-column: span 2 / span 2; }
+.gc-s3 { grid-column: span 3 / span 3; }
+.gc-s4 { grid-column: span 4 / span 4; }
+.gc-s5 { grid-column: span 5 / span 5; }
+.gc-s6 { grid-column: span 6 / span 6; }
+.gc-s7 { grid-column: span 7 / span 7; }
+.gc-s8 { grid-column: span 8 / span 8; }
+.gc-s9 { grid-column: span 9 / span 9; }
+.gc-s10 { grid-column: span 10 / span 10; }
+.gc-s11 { grid-column: span 11 / span 11; }
+.gc-s12 { grid-column: span 12 / span 12; }
+.gc-sf { grid-column: 1 / -1; } /* Span Full */
+
+/* Row Span (unitless, spans refer to grid tracks) */
+.gr-s1 { grid-row: span 1 / span 1; }
+.gr-s2 { grid-row: span 2 / span 2; }
+.gr-s3 { grid-row: span 3 / span 3; }
+.gr-s4 { grid-row: span 4 / span 4; }
+.gr-sf { grid-row: 1 / -1; } /* Span Full */
+
+/* Column Start/End (unitless, refers to grid lines) */
+.gc-st1 { grid-column-start: 1; }
+.gc-st2 { grid-column-start: 2; }
+.gc-st3 { grid-column-start: 3; }
+.gc-st4 { grid-column-start: 4; }
+.gc-st5 { grid-column-start: 5; }
+.gc-st6 { grid-column-start: 6; }
+.gc-st7 { grid-column-start: 7; }
+.gc-st8 { grid-column-start: 8; }
+.gc-st9 { grid-column-start: 9; }
+.gc-st10 { grid-column-start: 10; }
+.gc-st11 { grid-column-start: 11; }
+.gc-st12 { grid-column-start: 12; }
+
+.gc-e1 { grid-column-end: 1; }
+.gc-e2 { grid-column-end: 2; }
+.gc-e3 { grid-column-end: 3; }
+.gc-e4 { grid-column-end: 4; }
+.gc-e5 { grid-column-end: 5; }
+.gc-e6 { grid-column-end: 6; }
+.gc-e7 { grid-column-end: 7; }
+.gc-e8 { grid-column-end: 8; }
+.gc-e9 { grid-column-end: 9; }
+.gc-e10 { grid-column-end: 10; }
+.gc-e11 { grid-column-end: 11; }
+.gc-e12 { grid-column-end: 12; }
+.gc-el { grid-column-end: -1; } /* End Last */
+
+/* Row Start/End (unitless, refers to grid lines) */
+.gr-st1 { grid-row-start: 1; }
+.gr-st2 { grid-row-start: 2; }
+.gr-st3 { grid-row-start: 3; }
+.gr-st4 { grid-row-start: 4; }
+
+.gr-e1 { grid-row-end: 1; }
+.gr-e2 { grid-row-end: 2; }
+.gr-e3 { grid-row-end: 3; }
+.gr-e4 { grid-row-end: 4; }
+.gr-el { grid-row-end: -1; } /* End Last */
+
+/* ==========================================================================
+   6. Grid Module with named template areas
+   ========================================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: var(--grid-cols, repeat(auto-fit, minmax(0, 1fr)));
+  column-gap: var(--grid-col-gap, var(--grid-gap, 1rem));
+  row-gap: var(--grid-row-gap, var(--grid-gap, 1rem));
+  grid-template-areas: var(--grid-areas, "left center");
+  grid-template-rows: var(--grid-rows, auto);
+}
+.grid > .left { grid-area: left;}
+.grid > .center { grid-area: center;}
+.grid > .right { grid-area: right;}
+.grid > .top { grid-area: top;}
+.grid > .bottom { grid-area: bottom;}
+
+
+/* ==========================================================================
+   7. General Sizing & Spacing Utilities (all in rem / viewport units)
+   ========================================================================== */
+
+/* --- Margin Helpers --- */
+.m-a { margin: auto; } /* Margin All Auto */
+.my-a { margin-top: auto; margin-bottom: auto; } /* Margin Y-axis Auto */
+.mx-a { margin-left: auto; margin-right: auto; } /* Margin X-axis Auto */
+
+/* Margin All */
+.m-xxs { margin: var(--s-xxs); }
+.m-xs { margin: var(--s-xs); }
+.m-sm { margin: var(--s-sm); }
+.m-md { margin: var(--s-md); }
+.m-lg { margin: var(--s-lg); }
+.m-xl { margin: var(--s-xl); }
+.m-xxl { margin: var(--s-xxl); }
+
+/* Margin X-axis */
+.m-x-xxs { margin-left: var(--s-xxs); margin-right: var(--s-xxs); }
+.m-x-xs { margin-left: var(--s-xs); margin-right: var(--s-xs); }
+.m-x-sm { margin-left: var(--s-sm); margin-right: var(--s-sm); }
+.m-x-md { margin-left: var(--s-md); margin-right: var(--s-md); }
+.m-x-lg { margin-left: var(--s-lg); margin-right: var(--s-lg); }
+.m-x-xl { margin-left: var(--s-xl); margin-right: var(--s-xl); }
+.m-x-xxl { margin-left: var(--s-xxl); margin-right: var(--s-xxl); }
+
+/* Margin Y-axis */
+.m-y-xxs { margin-top: var(--s-xxs); margin-bottom: var(--s-xxs); }
+.m-y-xs { margin-top: var(--s-xs); margin-bottom: var(--s-xs); }
+.m-y-sm { margin-top: var(--s-sm); margin-bottom: var(--s-sm); }
+.m-y-md { margin-top: var(--s-md); margin-bottom: var(--s-md); }
+.m-y-lg { margin-top: var(--s-lg); margin-bottom: var(--s-lg); }
+.m-y-xl { margin-top: var(--s-xl); margin-bottom: var(--s-xl); }
+.m-y-xxl { margin-top: var(--s-xxl); margin-bottom: var(--s-xxl); }
+
+/* Margin by Side */
+.mt-xxs { margin-top: var(--s-xxs); }
+.mt-xs { margin-top: var(--s-xs); }
+.mt-sm { margin-top: var(--s-sm); }
+.mt-md { margin-top: var(--s-md); }
+.mt-lg { margin-top: var(--s-lg); }
+.mt-xl { margin-top: var(--s-xl); }
+.mt-xxl { margin-top: var(--s-xxl); }
+
+.mr-xxs { margin-right: var(--s-xxs); }
+.mr-xs { margin-right: var(--s-xs); }
+.mr-sm { margin-right: var(--s-sm); }
+.mr-md { margin-right: var(--s-md); }
+.mr-lg { margin-right: var(--s-lg); }
+.mr-xl { margin-right: var(--s-xl); }
+.mr-xxl { margin-right: var(--s-xxl); }
+
+.mb-xxs { margin-bottom: var(--s-xxs); }
+.mb-xs { margin-bottom: var(--s-xs); }
+.mb-sm { margin-bottom: var(--s-sm); }
+.mb-md { margin-bottom: var(--s-md); }
+.mb-lg { margin-bottom: var(--s-lg); }
+.mb-xl { margin-bottom: var(--s-xl); }
+.mb-xxl { margin-bottom: var(--s-xxl); }
+
+.ml-xxs { margin-left: var(--s-xxs); }
+.ml-xs { margin-left: var(--s-xs); }
+.ml-sm { margin-left: var(--s-sm); }
+.ml-md { margin-left: var(--s-md); }
+.ml-lg { margin-left: var(--s-lg); }
+.ml-xl { margin-left: var(--s-xl); }
+.ml-xxl { margin-left: var(--s-xxl); }
+
+/* --- Padding Helpers (updated names) --- */
+/* Padding All */
+.p-xxs { padding: var(--s-xxs); }
+.p-xs { padding: var(--s-xs); }
+.p-sm { padding: var(--s-sm); }
+.p-md { padding: var(--s-md); }
+.p-lg { padding: var(--s-lg); }
+.p-xl { padding: var(--s-xl); }
+.p-xxl { padding: var(--s-xxl); }
+
+/* Padding X-axis */
+.p-x-xxs { padding-left: var(--s-xxs); padding-right: var(--s-xxs); }
+.p-x-xs { padding-left: var(--s-xs); padding-right: var(--s-xs); }
+.p-x-sm { padding-left: var(--s-sm); padding-right: var(--s-sm); }
+.p-x-md { padding-left: var(--s-md); padding-right: var(--s-md); }
+.p-x-lg { padding-left: var(--s-lg); padding-right: var(--s-lg); }
+.p-x-xl { padding-left: var(--s-xl); padding-right: var(--s-xl); }
+.p-x-xxl { padding-left: var(--s-xxl); padding-right: var(--s-xxl); }
+
+/* Padding Y-axis */
+.p-y-xxs { padding-top: var(--s-xxs); padding-bottom: var(--s-xxs); }
+.p-y-xs { padding-top: var(--s-xs); padding-bottom: var(--s-xs); }
+.p-y-sm { padding-top: var(--s-sm); padding-bottom: var(--s-sm); }
+.p-y-md { padding-top: var(--s-md); padding-bottom: var(--s-md); }
+.p-y-lg { padding-top: var(--s-lg); padding-bottom: var(--s-lg); }
+.p-y-xl { padding-top: var(--s-xl); padding-bottom: var(--s-xl); }
+.p-y-xxl { padding-top: var(--s-xxl); padding-bottom: var(--s-xxl); }
+
+/* Padding by Side (pt, pr, pb, pl) - already short and good */
+.pt-xxs { padding-top: var(--s-xxs); }
+.pt-xs { padding-top: var(--s-xs); }
+.pt-sm { padding-top: var(--s-sm); }
+.pt-md { padding-top: var(--s-md); }
+.pt-lg { padding-top: var(--s-lg); }
+.pt-xl { padding-top: var(--s-xl); }
+.pt-xxl { padding-top: var(--s-xxl); }
+
+.pr-xxs { padding-right: var(--s-xxs); }
+.pr-xs { padding-right: var(--s-xs); }
+.pr-sm { padding-right: var(--s-sm); }
+.pr-md { padding-right: var(--s-md); }
+.pr-lg { padding-right: var(--s-lg); }
+.pr-xl { padding-right: var(--s-xl); }
+.pr-xxl { padding-right: var(--s-xxl); }
+
+.pb-xxs { padding-bottom: var(--s-xxs); }
+.pb-xs { padding-bottom: var(--s-xs); }
+.pb-sm { padding-bottom: var(--s-sm); }
+.pb-md { padding-bottom: var(--s-md); }
+.pb-lg { padding-bottom: var(--s-lg); }
+.pb-xl { padding-bottom: var(--s-xl); }
+.pb-xxl { padding-bottom: var(--s-xxl); }
+
+.pl-xxs { padding-left: var(--s-xxs); }
+.pl-xs { padding-left: var(--s-xs); }
+.pl-sm { padding-left: var(--s-sm); }
+.pl-md { padding-left: var(--s-md); }
+.pl-lg { padding-left: var(--s-lg); }
+.pl-xl { padding-left: var(--s-xl); }
+.pl-xxl { padding-left: var(--s-xxl); }
+
+
+/* Sizing Utilities (using percentage for full width/height, rem for min/max auto-fit) */
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.wh-full { width: 100%; height: 100%; }
+
+/* Min/Max width/height set to 0 to prevent content from overflowing Flex/Grid items */
+.min-w-0 { min-width: 0; }
+.min-h-0 { min-height: 0; }
+
+.max-w-full { max-width: 100%; }
+.max-h-full { max-height: 100%; }
+
+
+/* --- Viewport Width (vw) Utilities --- */
+/* vw: viewport width */
+.w-10vw { width: 10vw; }
+.w-20vw { width: 20vw; }
+.w-25vw { width: 25vw; }
+.w-30vw { width: 30vw; }
+.w-33vw { width: 33.33333vw; }
+.w-40vw { width: 40vw; }
+.w-50vw { width: 50vw; }
+.w-60vw { width: 60vw; }
+.w-66vw { width: 66.66667vw; }
+.w-70vw { width: 70vw; }
+.w-75vw { width: 75vw; }
+.w-80vw { width: 80vw; }
+.w-90vw { width: 90vw; }
+.w-100vw { width: 100vw; }
+
+
+/* --- Viewport Height (vh) Utilities --- */
+/* vh: viewport height */
+.h-10vh { height: 10vh; }
+.h-20vh { height: 20vh; }
+.h-25vh { height: 25vh; }
+.h-30vh { height: 30vh; }
+.h-33vh { height: 33.33333vh; }
+.h-40vh { height: 40vh; }
+.h-50vh { height: 50vh; }
+.h-60vh { height: 60vh; }
+.h-66vh { height: 66.66667vh; }
+.h-70vh { height: 70vh; }
+.h-75vh { height: 75vh; }
+.h-80vh { height: 80vh; }
+.h-90vh { height: 90vh; }
+.h-100vh { height: 100vh; }
+
+
+/* Overflow Utilities */
+.o-h { overflow: hidden; } /* Overflow Hidden */
+.o-a { overflow: auto; } /* Overflow Auto */
+.o-s { overflow: scroll; } /* Overflow Scroll */
+.o-x-a { overflow-x: auto; } /* Overflow X Auto */
+.o-y-a { overflow-y: auto; } /* Overflow Y Auto */
