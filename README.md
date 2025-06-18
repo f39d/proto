@@ -1,4 +1,4 @@
-# PROTO
+# PROTO CSS
 
 This library provides condensed CSS utility classes (Flexbox and CSS Grid) for rapid layout of data-dense UI prototypes. All units are in 'rem' for responsiveness and accessibility. Proto CSS focuses purely on layout, leaving styling of individual components (buttons, inputs, etc.) to other libraries.
 
