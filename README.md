@@ -11,8 +11,8 @@ Link tag
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/f39d/proto/css/proto_layout.css"/>
 ```
 
-## Basic Grid module Use
-Include the `grid` class on the top lvl container. Then set the custom css props for rows, cols, areas, and gap. 
+## Basic Grid Layout Utility Example
+Include the `grid` class on the top level container. Then set the custom css props for rows, cols, areas, and gap. Available grid areas are `top`, `left`, `center`, `right`, and `bottom`.
 ```
 <div class="grid" 
      style="--grid-cols: 60px 1fr 10vw;
@@ -30,3 +30,14 @@ Include the `grid` class on the top lvl container. Then set the custom css props
   <div class="bottom">bottom</div>
 </div>
 ```
+
+## Basic Flex Utility Example
+Utility classes are available for most flex css attributes. Example:
+Use `df` for `display:flex`
+`jc-fe` for `justify-content: flex-end`
+`ai-c` for `align-items: center`
+```
+<div class="df jc-fe ai-c">content aligned right</div>
+```
+
+## Flex Utility List
