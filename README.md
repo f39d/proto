@@ -1,5 +1,6 @@
-# PROTO
-The F39 utility css library for rapid prototyping.
+# PROTO: Concise Layout Utility Library for Data-Dense Web Applications.
+
+This library provides condensed utility classes (Flexbox and CSS Grid) for rapid layout of data-dense UI prototypes. All units are in 'rem' for responsiveness and accessibility. Proto CSS focuses purely on layout, leaving styling of individual components (buttons, inputs, etc.) to other libraries.
 
 ## Installation
 URL
@@ -41,3 +42,10 @@ Use `df` for `display:flex`
 ```
 
 ## Flex Utility List
+See section 3 of the `proto_layout.css` file for alignment & distribution classes.
+
+
+
+
+
+
